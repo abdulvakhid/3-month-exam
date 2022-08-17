@@ -1,0 +1,49 @@
+.interested {
+    padding-bottom: 80px;
+}
+
+.interested__content {
+
+    text-align: center;
+}
+
+.interested__topic {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: 'Ibarra Real Nova';
+    @include typography-styles(normal, 40px, 42px, 700, center, $main-textcolor);
+    letter-spacing: -0.357143px;
+}
+
+.interested__link {
+    padding: 17px 35px 17px 32px;
+    font-family: 'Public Sans';
+    @include typography-styles(normal, 12px, 14px, 400, center, $main-textcolor);
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include link-unstyle;
+    border: 1px solid $main-textcolor;
+}
+
+@include mobile-first(660px) {
+    .interested {
+        padding-bottom: 96px;
+    }
+
+    .interested__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .interested__topic-box {
+        width: 100%;
+        max-width: 335px;
+    }
+
+    .interested__topic {
+        margin-bottom: 0;
+        text-align: start;
+    }
+}

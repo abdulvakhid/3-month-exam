@@ -1,0 +1,116 @@
+/* === HEADER PART === */
+.site-header {
+    padding-top: 32px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header__menu-btn {
+    background-image: url("../images/menubtn.svg");
+    width: 24px;
+    height: 13px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include button-unstyle;
+}
+
+.sitenav__list {
+    @include flexbox(flex-start, center, column);
+    @include list-unstyle;
+}
+
+.sitenav {
+    display: none;
+}
+
+.sitenav-on .sitenav {
+    position: absolute;
+    padding: 40px 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    top: 80%;
+    right: 3%;
+    background-color: $main-textcolor;
+}
+
+.site-body {
+    overflow: hidden;
+}
+
+.sitenav-on .sitenav__item {
+    margin-right: 0;
+    margin-bottom: 32px;
+    z-index: 1;
+}
+
+.sitenav-on .site-header__menu-btn {
+    background-image: url("../images/x-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sitenav-on .sitenav__link {
+    font-family: "Public Sans", "Arial", sans-serif;
+    @include typography-styles(normal, 12px, 14px, 400, center, #fff);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include link-unstyle;
+}
+
+.sitenav-on .site-header__menu-btn {
+    background-image: url("../images/x-icon.svg");
+}
+
+/* MEDIA TABLET  */
+@include mobile-first(660px) {
+    .site-header {
+        padding-top: 64px;
+        padding-bottom: 47px;
+    }
+
+    .site-header__menu-btn {
+        display: none;
+    }
+
+    .sitenav {
+        display: block;
+    }
+
+    .sitenav__list {
+        @include flexbox(flex-start, center, row);
+    }
+
+    .sitenav__item {
+        &:not(:last-child) {
+            margin-right: 42px;
+        }
+    }
+
+    .sitenav__link {
+        font-family: "Public Sans";
+        @include typography-styles(normal, 12px, 14px, 400, left, $main-textcolor);
+        @include link-unstyle;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .sitenav__link--active {
+        color: $hover-color;
+    }
+}
+
+/* MEDIA DESKTOP */
+@include mobile-first(1000px) {
+    .site-header {
+        padding-bottom: 54px;
+    }
+}

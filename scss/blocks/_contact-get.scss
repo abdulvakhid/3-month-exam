@@ -1,0 +1,65 @@
+/* === CONTACT PGE GET SECTION === */
+.get {
+    padding-bottom: 32px;
+}
+
+.get__box {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    border-top: 1px solid #DDDDDE;
+    border-bottom: 1px solid #DDDDDE;
+}
+
+.get__topic {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: "Ibarra Real Nova", "Times New Roman", serif;
+    @include typography-styles(normal, 40px, 42px, 700, start, $main-textcolor);
+    letter-spacing: -0.357143px;
+}
+
+.get__text {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: " Public Sans", "Arial", sans-serif;
+    @include typography-styles(normal, 15px, 30px, 400, start, $main-textcolor);
+    opacity: 0.8;
+}
+
+.get__list {
+    @include flexbox(flex-start, center, row);
+    @include list-unstyle;
+}
+
+.get__item {
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+.get__link {
+    color: $main-textcolor;
+    background-color: transparent;
+}
+
+/* === MEDIA DESKTOP === */
+
+@include mobile-first(1000px) {
+    .get {
+        padding-bottom: 47px;
+    }
+
+    .get__box {
+        width: 100%;
+        @include flexbox(space-between, flex-start, row);
+        padding: 48px 0;
+    }
+
+    .get__topic {
+        width: 40%;
+    }
+
+    .get__content {
+        width: 60%;
+    }
+}
