@@ -1,40 +1,47 @@
+/* === ARTICLE PART === */
 .interested {
     padding-bottom: 80px;
 }
 
 .interested__content {
-
     text-align: center;
 }
 
 .interested__topic {
     margin: 0;
     margin-bottom: 40px;
-    font-family: 'Ibarra Real Nova';
+    font-family: "Ibarra Real Nova", "Times New Roman", serif;
     @include typography-styles(normal, 40px, 42px, 700, center, $main-textcolor);
     letter-spacing: -0.357143px;
 }
 
 .interested__link {
     padding: 17px 35px 17px 32px;
-    font-family: 'Public Sans';
+    font-family: "Public Sans", "Arial", sans-serif;
     @include typography-styles(normal, 12px, 14px, 400, center, $main-textcolor);
-    line-height: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     @include link-unstyle;
     border: 1px solid $main-textcolor;
 }
 
+.interested__line {
+    width: 18%;
+    min-width: 50px;
+    max-width: 534px;
+    height: 1px;
+    background-color: #DDDDDE;
+    display: none;
+}
+
+/* MEDIA TABLET */
 @include mobile-first(660px) {
     .interested {
         padding-bottom: 96px;
     }
 
     .interested__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox;
     }
 
     .interested__topic-box {
@@ -45,5 +52,31 @@
     .interested__topic {
         margin-bottom: 0;
         text-align: start;
+    }
+
+    .interested__line {
+        display: block;
+    }
+}
+
+@include mobile-first(830px) {
+    .interested__line {
+        width: 30%;
+    }
+}
+
+/* MEDIA DESKTOP */
+@include mobile-first(1000px) {
+    .interested__line {
+        width: 45%;
+    }
+
+    .interested__link {
+        transition: all 0.4s ease;
+
+        &:hover {
+            color: #fff;
+            background-color: $main-textcolor;
+        }
     }
 }

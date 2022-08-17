@@ -66,6 +66,10 @@
     @include link-unstyle;
 }
 
+.sitenav-on .sitenav__link--active {
+    color: #fff;
+}
+
 .sitenav-on .site-header__menu-btn {
     background-image: url("../images/x-icon.svg");
 }
@@ -77,6 +81,40 @@
         padding-bottom: 47px;
     }
 
+    .sitenav-on .sitenav {
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .sitenav-on .sitenav__list {
+        @include flexbox(flex-start, center, row);
+    }
+
+    .sitenav-on .sitenav__item {
+        margin: 0;
+        margin-bottom: 0x;
+    }
+
+    .sitenav-on .sitenav__link {
+        font-family: "Public Sans";
+        @include typography-styles(normal, 12px, 14px, 400, left, $main-textcolor);
+        @include link-unstyle;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .sitenav-on .sitenav__link--active {
+        color: $hover-color;
+    }
+
+    // simle 
     .site-header__menu-btn {
         display: none;
     }

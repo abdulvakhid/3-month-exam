@@ -66,6 +66,14 @@
         opacity: 0.4;
     }
 
+    &:not(:placeholder-shown):not(:focus):invalid {
+        border: 1px solid $invalid-color;
+    }
+
+    &:not(:placeholder-shown):not(:focus):invalid+.contact__input-error {
+        opacity: 1;
+    }
+
     &:focus {
         border: 1px solid $hover-color;
     }
@@ -115,5 +123,4 @@
             background-color: $hover-color;
         }
     }
-
 }

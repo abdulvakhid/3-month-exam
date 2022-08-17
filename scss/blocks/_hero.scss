@@ -42,20 +42,6 @@
     background-color: $btncolor;
 }
 
-.hero__before {
-    width: 48px;
-    height: 46px;
-    position: absolute;
-    top: 601px;
-    left: 20px;
-    background-image: url("../images/hero-aboutbefore.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #1D3445;
-}
-
-
-
 @include mobile-first(400px) {
     .hero__bg {
         height: 350px;
@@ -81,7 +67,6 @@
         background-image: url("../images/tablet-hero.png");
         width: 100%;
         height: 600px;
-
         @include bgRetinaImages{
         background-image: url("../images/tablet-hero@2x.png");
         }
@@ -91,20 +76,14 @@
         padding: 56px 73px 0 0;
         max-width: 514px;
         position: absolute;
-        top: 464px;
-        left: 19px;
+        bottom: -98px;
+        left: 20px;
         background-color: #FAFAFA;
-    }
-
-    .hero__before {
-        top: 241px;
-        left: 0;
     }
 }
 
 @include mobile-first(730px) {
     .hero__bg {
-        background-image: url("../images/tablet-hero.png");
         background-position-y: calc(50% + -16px);
     }
 }
@@ -127,11 +106,7 @@
         max-width: 446px;
         top: 366px;
         left: calc(50% - 486px);
-    }
-
-    .hero__before {
-        top: 322px;
-        left: 0;
+        z-index: 0;
     }
 
     .hero__topic {
@@ -141,61 +116,9 @@
     }
 
     .hero__link {
-
         &:hover {
             background-color: #5FB4A2;
         }
     }
 
-    .hero__link:hover~.hero__before {
-        background-color: #56A292;
-    }
-
-
-}
-
-@include mobile-first(1030px) {
-    .hero__topic-box {
-        width: 100%;
-        max-width: 440px;
-        top: 366px;
-        left: calc(50% - 496px);
-    }
-}
-
-@include mobile-first(1050px) {
-    .hero__topic-box {
-        width: 100%;
-        max-width: 443px;
-        top: 366px;
-        left: calc(50% - 510px);
-    }
-}
-
-@include mobile-first(1080px) {
-    .hero__topic-box {
-        width: 100%;
-        max-width: 454px;
-        top: 366px;
-        left: calc(50% - 532px);
-    }
-}
-
-@include mobile-first(1130px) {
-    .hero__topic-box {
-        width: 100%;
-        max-width: 450px;
-        top: 366px;
-        left: calc(50% - 553px);
-    }
-}
-
-
-@include mobile-first(1150px) {
-    .hero__topic-box {
-        width: 100%;
-        max-width: 450px;
-        top: 371px;
-        left: calc(50% - 556px);
-    }
 }
