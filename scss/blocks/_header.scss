@@ -67,7 +67,7 @@
 }
 
 .sitenav-on .sitenav__link--active {
-    color: #fff;
+    color: $hover-color;
 }
 
 .sitenav-on .site-header__menu-btn {
@@ -103,7 +103,7 @@
     }
 
     .sitenav-on .sitenav__link {
-        font-family: "Public Sans";
+        font-family: "Public Sans", "Arial", sans-serif;
         @include typography-styles(normal, 12px, 14px, 400, left, $main-textcolor);
         @include link-unstyle;
         letter-spacing: 2px;
@@ -114,7 +114,7 @@
         color: $hover-color;
     }
 
-    // simle 
+    /* simple  */
     .site-header__menu-btn {
         display: none;
     }
@@ -134,7 +134,7 @@
     }
 
     .sitenav__link {
-        font-family: "Public Sans";
+        font-family: "Public Sans", "Arial", sans-serif;
         @include typography-styles(normal, 12px, 14px, 400, left, $main-textcolor);
         @include link-unstyle;
         letter-spacing: 2px;

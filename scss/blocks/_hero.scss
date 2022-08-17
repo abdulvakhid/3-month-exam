@@ -8,9 +8,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 271px;
+    margin-bottom: 24px;
 
-    @include bgRetinaImages{
-    background-image: url("../images/hero-mobilebg@2x.png");
+    @include bgRetinaImages {
+        background-image: url("../images/hero-mobilebg@2x.png");
     }
 }
 
@@ -20,26 +21,33 @@
 }
 
 .hero__topic {
+    margin: 0;
     margin-bottom: 32px;
     font-family: "Ibarra Real Nova", "Times New Roman", serif;
     @include typography-styles(normal, 40px, 42px, 700, left, $main-textcolor);
     letter-spacing: -0.357143px;
 }
 
-.hero__link-box {
-    display: flex;
-}
-
 .hero__link {
     margin-left: 48px;
-    position: relative;
-    padding: 16px 20px;
+    padding: 17px 20px;
     font-family: "Public Sans", "Arial", sans-serif;
     @include typography-styles(normal, 12px, 14px, 400, right, #fff);
     letter-spacing: 2px;
     text-transform: uppercase;
     @include link-unstyle;
     background-color: $btncolor;
+    position: relative;
+
+    &::before {
+        @include psevdoelements(inline-block, 48px, 48px, );
+        background-image: url("../../images/hero-link-before.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: -48px;
+        background-color: $btncolor;
+    }
 }
 
 @include mobile-first(400px) {
@@ -67,18 +75,24 @@
         background-image: url("../images/tablet-hero.png");
         width: 100%;
         height: 600px;
-        @include bgRetinaImages{
-        background-image: url("../images/tablet-hero@2x.png");
+        margin-bottom: 0;
+
+        @include bgRetinaImages {
+            background-image: url("../images/tablet-hero@2x.png");
         }
     }
 
     .hero__topic-box {
-        padding: 56px 73px 0 0;
-        max-width: 514px;
+        padding: 56px 55px 0 0;
+        max-width: 492px;
         position: absolute;
         bottom: -98px;
         left: 20px;
         background-color: #FAFAFA;
+    }
+
+    .hero__topic {
+        margin-bottom: 48px;
     }
 }
 
@@ -94,7 +108,15 @@
     }
 
     .hero__bg {
+        display: none;
+    }
+
+    .hero__box {
         background-image: url("../images/desktop-hero.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px;
+        position: relative;
 
         @include bgRetinaImages {
             background-image: url("../images/desktop-hero@2x.png");
@@ -104,9 +126,8 @@
     .hero__topic-box {
         width: 100%;
         max-width: 446px;
-        top: 366px;
-        left: calc(50% - 486px);
-        z-index: 0;
+        bottom: 0;
+        left: 0;
     }
 
     .hero__topic {
@@ -116,8 +137,14 @@
     }
 
     .hero__link {
+        transition: all 0.4s ease;
         &:hover {
             background-color: #5FB4A2;
+        }
+
+        &:hover::before {
+            transition: 0.4s ease;
+            background-color: #56A292;
         }
     }
 

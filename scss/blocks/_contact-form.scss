@@ -95,6 +95,7 @@
     text-transform: uppercase;
     @include button-unstyle;
     background-color: $btncolor;
+    cursor: pointer;
 }
 
 /* MEDIA DESKTOP */
@@ -114,13 +115,5 @@
 
     .contact__form {
         width: 60%;
-    }
-
-    .contact__btn {
-        transition: all 0.4s ease;
-
-        &:hover {
-            background-color: $hover-color;
-        }
     }
 }

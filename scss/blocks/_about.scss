@@ -6,7 +6,6 @@
 .about__img {
     width: 100%;
     padding-bottom: 32px;
-    z-index: 1;
 }
 
 .about__content {
@@ -19,7 +18,7 @@
 .about__topic {
     margin: 0;
     margin-bottom: 28px;
-    font-family: "Ibarra Real Nova";
+    font-family: "Ibarra Real Nova", "Times New Roman", serif;
     @include typography-styles(normal, 40px, 42px, 700, center, $main-textcolor);
     letter-spacing: -0.357143px;
 }
@@ -28,14 +27,14 @@
     margin: 0;
     margin-bottom: 24px;
     font-family: "Public Sans", "Arial", sans-serif;
-    @include typography-styles(normal, 16px, 30px, 400, $main-textcolor);
+    @include typography-styles(normal, 16px, 30px, 400, left,$main-textcolor);
     opacity: 0.8;
 }
 
 .about__link {
     padding: 17px 36px 17px 32px;
     font-family: "Public Sans", "Arial", sans-serif;
-    @include typography-styles(normal, 12px, 14px, 400, center, $main-textcolor);
+    @include typography-styles( normal, 12px, 14px, 400, center, $main-textcolor);
     @include link-unstyle;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -69,7 +68,7 @@
     }
 }
 
-@include mobile-first(681) {
+@include mobile-first(681px) {
     .about__img {
         height: 683px;
     }
@@ -85,7 +84,7 @@
     .about__topic {
         font-size: 40px;
         line-height: 42px;
-        letter-spacing: -0.357143px
+        letter-spacing: -0.357143px;
     }
 
     .about__link {
